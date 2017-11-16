@@ -1519,6 +1519,7 @@ func AddMembersBestEffort(ctx context.Context, g *libkb.GlobalContext, teamID ke
 			}
 			g.Log.CDebugf(ctx, "Will remove old version of user (%s) from team", existingUV)
 			req.None = append(req.None, existingUV)
+			needPostMembership = true
 		}
 
 		if !becameAnInvite {
